@@ -15,26 +15,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/productsales")
 public class ProductSalesController {
-    private final ProductRepository productRepository;
-    private final SalesRepository salesRepository;
-
-    public ProductSalesController(ProductRepository productRepository, SalesRepository salesRepository) {
-        this.productRepository = productRepository;
-        this.salesRepository = salesRepository;
-    }
-
-    @GetMapping("/products")
-    public List<Product> getAllProducts() {
-        return productRepository.findAll();
-    }
-
-    @GetMapping("/sales")
-    public List<Sales> getAllSales() {
-        return salesRepository.findAll();
-    }
-
-
-
     @GetMapping("/productsales")
     public String displayProductSales(Model model) {
         List<Product> products = getProductData();

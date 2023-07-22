@@ -13,7 +13,7 @@ public class Sales implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long SlNo;
-    private int SalesmanID;
+    private Long SalesmanID;
 
     @ManyToOne
     @JoinColumn(name = "ProdID")
@@ -23,7 +23,7 @@ public class Sales implements Serializable {
     private Date DOS;
 
     public Sales(){}
-    public Sales(Long slNo, int salesmanID, Product productSales, String salesmanName, Date DOS) {
+    public Sales(Long slNo, Long salesmanID, Product productSales, String salesmanName, Date DOS) {
         SlNo = slNo;
         SalesmanID = salesmanID;
         this.productSales = productSales;
@@ -39,11 +39,11 @@ public class Sales implements Serializable {
         SlNo = slNo;
     }
 
-    public int getSalesmanID() {
+    public Long getSalesmanID() {
         return SalesmanID;
     }
 
-    public void setSalesmanID(int salesmanID) {
+    public void setSalesmanID(Long salesmanID) {
         SalesmanID = salesmanID;
     }
 
